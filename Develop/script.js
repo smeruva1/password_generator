@@ -32,20 +32,52 @@ function generatePassword() {
 
   //Get password criteria from user
   var pwdlen = prompt("Length (must be between 8 and 128 characters)", 8);
-  console.log(pwdlen);
+  //console.log(pwdlen);
+  //console.log(isNaN(pwdlen));
+  //console.log('==============================111====');
 
-  var wantSplchrs = confirm("Do you want to include special characters?");
-  console.log("splchrs " + wantSplchrs);
+  //if its not a number ask for number
+  while (isNaN(pwdlen) || pwdlen < 8 || pwdlen > 128) {
+    alert("Please enter a valid number!");
+    pwdlen = prompt("Length (must be between 8 and 128 characters)", 8);
+    //console.log(pwdlen);
+    //console.log(isNaN(pwdlen));
+    //console.log('============================222======');
 
-  var wantNumbers = confirm("Do you want to include numbers?");
-  console.log("Numbers " + wantNumbers);
+  }
 
-  var wantLowerchrs = confirm("Do you want to include Lower characters?");
-  console.log("lower " + wantLowerchrs);
+  var charcnt = 0;
 
-  var wantUpperchrs = confirm("Do you want to include Upper characters?");
-  console.log("upper " + wantUpperchrs);
+  do {
+    var wantSplchrs = confirm("Do you want to include special characters?");
+    console.log("splchrs " + wantSplchrs);
+    if (wantSplchrs) {
+      charcnt++;
+      console.log(charcnt);
+    }
+    var wantNumbers = confirm("Do you want to include numbers?");
+    console.log("Numbers " + wantNumbers);
+    if (wantNumbers) {
+      charcnt++;
+      console.log(charcnt);
+    }
 
+    var wantLowerchrs = confirm("Do you want to include Lower characters?");
+    console.log("lower " + wantLowerchrs);
+    if (wantLowerchrs) {
+      charcnt++;
+      console.log(charcnt);
+    }
+
+    var wantUpperchrs = confirm("Do you want to include Upper characters?");
+    console.log("upper " + wantUpperchrs);
+
+    if (wantUpperchrs) {
+      charcnt++;
+      console.log(charcnt);
+    }
+
+  } while (charcnt < 1);
   //Define Arrays to hold special chrs, number and alphabets
   var ArraySpecialChrs = ['"', ' ', '!', '"', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '^', '_', '`', '{', '|', '}', ';', '~'];
   console.log(ArraySpecialChrs);
