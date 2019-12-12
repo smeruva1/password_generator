@@ -37,7 +37,7 @@ function generatePassword() {
   var wantSplchrs = confirm("Do you want to include special characters?");
   console.log("splchrs " + wantSplchrs);
 
-  var wantNumbers = confirm("Do you want to include special characters?");
+  var wantNumbers = confirm("Do you want to include numbers?");
   console.log("Numbers " + wantNumbers);
 
   var wantLowerchrs = confirm("Do you want to include Lower characters?");
@@ -71,9 +71,9 @@ function generatePassword() {
 
       // console.log("----------------");
 
-      var randArrayNo = Math.ceil(Math.random() * ArraySpecialChrs.length);
+      var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
       console.log(ArraySpecialChrs.length);
-      console.log(randArrayNo);
+      console.log("What Array number are we picking" + randArrayNo);
       console.log(ArraySpecialChrs[randArrayNo]);
       ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
       console.log(ArrayPwd);
@@ -82,6 +82,41 @@ function generatePassword() {
 
     }
   }
+
+  //Check 2 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === true && wantLowerchrs === false && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+      console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        console.log(ArraySpecialChrs.length);
+        console.log("What Array number are we picking" + randArrayNo);
+        console.log(ArraySpecialChrs[randArrayNo]);
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+        console.log(ArrayPwd);
+
+        console.log("----------------");
+      } else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        console.log(ArrayNumbers.length);
+        console.log("What Array number are we picking" + randArrayNo);
+        console.log(ArrayNumbers[randArrayNo]);
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+        console.log(ArrayPwd);
+
+        console.log("----------------");
+
+      }
+
+    }
+  }
+
 
   //Concatinate the pwd and return
   Passwordfinal = "";
