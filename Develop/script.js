@@ -1,13 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var password = ''
 
 // Write password to the #password input
 function writePassword() {
   password = generatePassword();
 
   console.log("-----$$$$$-----");
-  console.log(Password);
+  console.log(password);
   console.log("-----$$$$$-----");
   var passwordText = document.querySelector("#password");
 
@@ -84,7 +84,7 @@ function generatePassword() {
   }
 
   //Concatinate the pwd and return
-  var Passwordfinal = "";
+  Passwordfinal = "";
   for (var i = 0; i < ArrayPwd.length; i++) {
     Passwordfinal = Passwordfinal + ArrayPwd[i];
 
