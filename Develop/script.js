@@ -8,7 +8,7 @@ function writePassword() {
 
   console.log("-----$$$$$-----");
   console.log(password);
-  console.log("-----$$$$$-----");
+  //console.log("-----$$$$$-----");
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -73,7 +73,7 @@ function generatePassword() {
 
       var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
       console.log(ArraySpecialChrs.length);
-      console.log("What Array number are we picking" + randArrayNo);
+      console.log("What Array number are we picking: " + randArrayNo);
       console.log(ArraySpecialChrs[randArrayNo]);
       ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
       console.log(ArrayPwd);
@@ -83,7 +83,37 @@ function generatePassword() {
     }
   }
 
+
   //Check 2 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === true && wantLowerchrs === false && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+      var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+      ArrayPwd[i] = ArrayNumbers[randArrayNo];
+
+    }
+  }
+
+
+  //Check 3 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === false && wantLowerchrs === true && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+      var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+      ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+    }
+  }
+
+
+  //Check 4 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === false && wantLowerchrs === false && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+      var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+      ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+    }
+  }
+
+  //Check 5 of 15 possibility
   if (wantSplchrs === true && wantNumbers === true && wantLowerchrs === false && wantUpperchrs === false) {
     for (var i = 0; i < pwdlen; i++) {
 
@@ -95,7 +125,7 @@ function generatePassword() {
         //Variable to get a random index
         var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
         console.log(ArraySpecialChrs.length);
-        console.log("What Array number are we picking" + randArrayNo);
+        console.log("What Array number are we picking: " + randArrayNo);
         console.log(ArraySpecialChrs[randArrayNo]);
         ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
         console.log(ArrayPwd);
@@ -105,12 +135,270 @@ function generatePassword() {
         //Variable to get a random index
         var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
         console.log(ArrayNumbers.length);
-        console.log("What Array number are we picking" + randArrayNo);
+        console.log("What Array number are we picking: " + randArrayNo);
         console.log(ArrayNumbers[randArrayNo]);
         ArrayPwd[i] = ArrayNumbers[randArrayNo];
         console.log(ArrayPwd);
 
         console.log("----------------");
+
+      }
+
+    }
+  }
+
+  //Check 6 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === false && wantLowerchrs === true && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+
+      } else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+      }
+
+    }
+  }
+
+  //Check 7 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === false && wantLowerchrs === false && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+
+      } else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 8 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === true && wantLowerchrs === true && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 9 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === true && wantLowerchrs === false && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 10 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === false && wantLowerchrs === true && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are two arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 2);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 11 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === true && wantLowerchrs === true && wantUpperchrs === false) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are three arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 3);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+
+      } else if (randArraypickerNo === 3) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 12 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === true && wantLowerchrs === false && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are three arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 3);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+
+      } else if (randArraypickerNo === 3) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 13 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === false && wantLowerchrs === true && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are three arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 3);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+      } else if (randArraypickerNo === 3) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+  //Check 14 of 15 possibility
+  if (wantSplchrs === false && wantNumbers === true && wantLowerchrs === true && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are three arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 3);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+      } else if (randArraypickerNo === 3) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
+
+      }
+
+    }
+  }
+
+
+  //Check 15 of 15 possibility
+  if (wantSplchrs === true && wantNumbers === true && wantLowerchrs === true && wantUpperchrs === true) {
+    for (var i = 0; i < pwdlen; i++) {
+
+      // As there are three arrays, generate a random number to pick the array
+      var randArraypickerNo = Math.ceil(Math.random() * 4);
+      //console.log(randArraypickerNo);
+
+      if (randArraypickerNo === 1) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArraySpecialChrs.length - 1));
+        ArrayPwd[i] = ArraySpecialChrs[randArrayNo];
+      }
+      else if (randArraypickerNo === 2) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayNumbers.length - 1));
+        ArrayPwd[i] = ArrayNumbers[randArrayNo];
+
+      } else if (randArraypickerNo === 3) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayLowerChrs.length - 1));
+        ArrayPwd[i] = ArrayLowerChrs[randArrayNo];
+
+      } else if (randArraypickerNo === 4) {
+        //Variable to get a random index
+        var randArrayNo = Math.ceil(Math.random() * (ArrayUpperChrs.length - 1));
+        ArrayPwd[i] = ArrayUpperChrs[randArrayNo];
 
       }
 
