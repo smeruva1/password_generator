@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-align: center;
 }
 
 html,
@@ -60,12 +61,14 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
-}
+  /* text-align: center; */
+  }
 
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
+  /* text-align: center; */
 }
 
 .btn {
