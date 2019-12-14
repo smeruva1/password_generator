@@ -11,7 +11,9 @@ There are 5 arrays being created to solve:
 
     5. Arraypwd: To store generated password in random.
 
-I have used Math.random(); to generate which of the character array i am going to use and another Math.random(); for which character in selectex array.
+I have used Math.random(); to generate which of the character array i am going to use and another Math.random(); for which character in selected array.
+
+User also has capability to copy the pwd to clipboard.
 
 
 
